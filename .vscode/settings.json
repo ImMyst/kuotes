@@ -1,0 +1,14 @@
+{
+    "files.exclude": {
+        "node_modules": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.rulers": [150],
+    "editor.wordWrap": "off",
+    "eslint.lintTask.enable": true,
+    "files.autoSave": "onFocusChange",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
