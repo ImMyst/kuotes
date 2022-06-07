@@ -7,7 +7,7 @@ const KButton = (props: IButtonProps) => {
 
     return (
         <button
-            className={classNames('shadow-md` block rounded-md px-6 py-3 text-white', ButtonVariant[variant])}
+            className={classNames('block rounded-md px-6 py-3 text-white', ButtonVariant[variant])}
             disabled={isDisabled}
             {...rest}
         >
