@@ -1,5 +1,2 @@
 // Colors variant
-export enum Variant {
-    PRIMARY,
-    MAGIC
-}
+export type TColorVariant = 'primary' | 'magic';

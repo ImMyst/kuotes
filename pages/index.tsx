@@ -1,5 +1,4 @@
 import KButton from '@components/ui/KButton/KButton';
-import { Variant } from '@components/ui/KUITypes';
 import { useAuth } from '@lib/authProvider';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -36,7 +35,7 @@ const Home: NextPage = () => {
                 <div className="flex space-x-4">
                     <KButton
                         type="submit"
-                        variant={Variant.MAGIC}
+                        variant="primary"
                         onClick={(e) => {
                             onSubmit(e, email);
                         }}
