@@ -1,16 +1,15 @@
-import { useAuth } from "@lib/auth";
-import type { NextPage } from "next";
-import Head from "next/head";
-import { FormEvent, MouseEvent, useState } from "react";
+import KButton from '@components/ui/KButton/KButton';
+import { Variant } from '@components/ui/KUITypes';
+import { useAuth } from '@lib/authProvider';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { MouseEvent, useState } from 'react';
 
 const Home: NextPage = () => {
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState('');
     const auth = useAuth();
 
-    const onSubmit = (
-        event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
-        email: string
-    ) => {
+    const onSubmit = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>, email: string) => {
         event.preventDefault();
         if (auth?.session) {
             auth.signOut();
@@ -22,7 +21,7 @@ const Home: NextPage = () => {
     return (
         <div className="flex min-h-screen flex-col items-center justify-center py-2">
             <Head>
-                <title>Create Next App</title>
+                <title>Kuotes</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
@@ -35,25 +34,24 @@ const Home: NextPage = () => {
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <div className="flex space-x-4">
-                    <button
+                    <KButton
                         type="submit"
+                        variant={Variant.MAGIC}
                         onClick={(e) => {
                             onSubmit(e, email);
                         }}
-                        className="bg-blue-700 px-4 py-2 text-white"
                     >
-                        S'enregistrer
-                    </button>
+                        Envoyer un Magic Link
+                    </KButton>
                     {auth?.session && (
-                        <button
+                        <KButton
                             type="submit"
                             onClick={(e) => {
                                 onSubmit(e, email);
                             }}
-                            className="bg-blue-700 px-4 py-2 text-white"
                         >
                             Deconnexion
-                        </button>
+                        </KButton>
                     )}
                 </div>
                 <span>{auth?.session?.user?.email}</span>
