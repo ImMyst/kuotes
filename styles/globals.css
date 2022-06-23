@@ -7,8 +7,8 @@ html {
 }
 
 #__next {
-    @apply text-slate-100;
-    background: #1a202c;
+    @apply text-slate-900 dark:text-slate-100;
+    @apply bg-slate-100 dark:bg-[#1a202c];
     display: flex;
     flex-direction: column;
     min-height: 100vh;

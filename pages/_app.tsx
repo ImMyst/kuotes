@@ -14,7 +14,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
 
             <KNavbar />
 
-            <main className="flex min-h-screen flex-col items-center justify-center">
+            <main className="flex h-[calc(100vh_-_88px)] flex-col items-center justify-center">
                 <Component {...pageProps} />
             </main>
         </AuthProvider>

@@ -23,7 +23,7 @@ export const ButtonSizeVariant: Record<TSizeVariant, string> = {
 
 export const ButtonShapeVariant: Record<TShapeVariant, string> = {
     default: '',
-    text: 'bg-transparent shadow-none hover:bg-primary/20 focus:bg-primary/20'
+    text: 'text-slate-900 dark:text-slate-100 bg-transparent shadow-none hover:bg-primary/10 focus:bg-primary/20'
 };
 
 export interface IButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
