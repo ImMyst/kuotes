@@ -18,35 +18,38 @@ const Signup: NextPage = () => {
 
     return (
         <Fragment>
-            <input
-                type="text"
-                placeholder="Email"
-                pattern="/^\S+@\S+$/i"
-                required
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <div className="flex space-x-4">
-                <KButton
-                    type="submit"
-                    variant="magic"
-                    onClick={(e) => {
-                        onSubmit(e, email);
-                    }}
-                >
-                    Envoyer un Magic Link
-                </KButton>
-                {auth?.session && (
+            <div className="flex flex-col space-y-4">
+                <input
+                    type="text"
+                    className="text-slate-900"
+                    placeholder="Email"
+                    pattern="/^\S+@\S+$/i"
+                    required
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <div className="flex space-x-4">
                     <KButton
                         type="submit"
+                        variant="magic"
                         onClick={(e) => {
                             onSubmit(e, email);
                         }}
                     >
-                        Deconnexion
+                        Envoyer un Magic Link
                     </KButton>
-                )}
+                    {auth?.session && (
+                        <KButton
+                            type="submit"
+                            onClick={(e) => {
+                                onSubmit(e, email);
+                            }}
+                        >
+                            Deconnexion
+                        </KButton>
+                    )}
+                </div>
+                <span className="text-center">{auth?.session?.user?.email}</span>
             </div>
-            <span>{auth?.session?.user?.email}</span>
         </Fragment>
     );
 };
